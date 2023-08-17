@@ -25,6 +25,10 @@ def all_unique(elements):
     else:
         return False
 
+# def all_unique(iterable):  ---> solution
+#     items = list(iterable)
+#     return len(items) == len(set(items))
+
 
 print(all_unique([]))  # True
 print(all_unique([1, 2, 3]))  # True
