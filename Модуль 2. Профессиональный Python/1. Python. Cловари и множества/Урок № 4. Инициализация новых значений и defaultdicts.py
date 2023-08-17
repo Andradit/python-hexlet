@@ -15,8 +15,8 @@ d["l"]  # [2, 3]
 def collect_indexes(elements):
     dict = {}
 
-    for value, key in elements:
-        dict.setdefault(key, []).append(value)
+    for index, value in enumerate(elements):
+        dict.setdefault(value, []).append(index)
 
     return dict
 
