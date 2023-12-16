@@ -1,8 +1,10 @@
+# from collections import Counter
+# from functools import reduce
 '''Имеется ряд словарей с пересекающимися ключами (значения - положительные
 числа). Напишите 2 функции, которые делают с массивом словарей следующие
 операции:
 
-1-ая функция max_dct(*dicts) формирует новый словарь по правилу:
+1-ая функция max_dict(*dicts) формирует новый словарь по правилу:
 Если в исходных словарях есть повторяющиеся ключи, выбираем среди их значений
 максимальное и присваиваем этому ключу (например, в словаре_1 есть ключ "а" со
 значением 5, и в словаре_2 есть ключ "а", но со значением 9. Выбираем
@@ -13,28 +15,53 @@
 нет. Следовательно, переносим в новый словарь этот ключ вместе с его
 значением).Сформированный словарь возвращаем.
 
-2-ая функция sum_dct(*dicts) суммирует значения повторяющихся ключей. Значения
+2-ая функция sum_dict(*dicts) суммирует значения повторяющихся ключей. Значения
 остальных ключей остаются исходными. (Проводятся операции по аналогу первой
 функции, но берутся не максимумы, а суммы значений одноименных ключей).
 Функция возвращает сформированный словарь.'''
-from collections import Counter
-from functools import reduce
-
-dict_1 = {1: 12, 2: 33, 3: 10, 4: 10, 5: 2, 6: 90}
-dict_2 = {1: 12, 3: 7, 4: 1, 5: 2, 7: 112}
-dict_3 = {2: 3, 3: 3, 4: 60, 6: 8, 7: 25, 8: 71}
-dict_4 = {3: 1, 4: 13, 5: 31, 9: 9, 10: 556}
 
 
-def sum_dict(*dicts):
-    return dict(reduce(lambda a, b: Counter(a) + Counter(b), dicts))
+dict_1 = {'a': 12, 'b': 33, 'c': 10, 'd': 10, 'e': 2, 'f': 90}
+dict_2 = {'a': 12, 'b': 7, 'c': 1, 'd': 2, 'e': 112}
+dict_3 = {'a': 3, 'b': 3, 'c': 60, 'd': 8, 'e': 725, 'f': 111}
+dict_4 = {'a': 1, 'b': 13, 'c': 31, 'd': 9, 'e': 556}
 
 
-def max_dict(*dicts):
-    return dict(reduce(lambda a, b: Counter(a) | Counter(b), dicts))
+def max_dict(*args):
+    res_dict = {}
+    for dicts in args:
+        for key, value in dicts.items():
+            if key not in res_dict:
+                res_dict[key] = value
+            elif value > res_dict[key]:
+                res_dict[key] = value
+    return res_dict
 
 
-print(max_dict(dict_1, dict_2))
-print(sum_dict(dict_1, dict_4, dict_3))
+# SOLUTION
+# def max_dict(*dicts):
+#     return dict(reduce(lambda a, b: Counter(a) | Counter(b), dicts))
+
 print(max_dict(dict_1, dict_2, dict_3, dict_4))
+# {'a': 12, 'b': 33, 'c': 60, 'd': 10, 'e': 725, 'f': 111}
+
+
+def sum_dict(*args):
+    res_dict = {}
+    for dicts in args:
+        for key, value in dicts.items():
+            if key not in res_dict:
+                res_dict[key] = value
+            else:
+                res_dict[key] += value
+    return res_dict
+
+# SOLUTION
+# def sum_dict(*dicts):
+#     return dict(reduce(lambda a, b: Counter(a) + Counter(b), dicts))
+
+
+print(sum_dict(dict_1, dict_4, dict_3))
+# {'a': 16, 'b': 49, 'c': 101, 'd': 27, 'e': 1283, 'f': 201}
 print(sum_dict(dict_1, dict_2, dict_3, dict_4))
+# {'a': 28, 'b': 56, 'c': 102, 'd': 29, 'e': 1395, 'f': 201}
