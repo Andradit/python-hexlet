@@ -33,8 +33,7 @@
 Для разбивки текста на слова можно использовать метод split(), но учтите что
 какие-то слова могут оканчиваться на знаки препинания.'''
 
-file = open('Модуль 2. Профессиональный Python/7. Python. Основы текстового'
-            'ввода-вывода/foo.txt', 'w')
+file = open('foo.txt', 'w')
 file.write("The Python language was not named after a long snake, but "
            "after the British comedy. show Monty Python Flying Circus")
 file.close()
