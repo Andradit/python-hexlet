@@ -35,46 +35,78 @@
 но попробуйте сменить угол зрения."""
 
 
-def length(items):
-    head, *tail = items
-    if not tail:
-        return head
-    return length(tail)
+# def length(items):
+#     print(f'{items=}')
+#     head, *tail = items
+#     print(f'{head=}, {tail=}')
+#     if not tail:
+#         print(1)
+#         return 1
+#     result = length(tail) + 1
+#     print(result)
+#     return result
+#
+#
+# print(length([1, 2, 3, 6, 8]))  # 5
 
 
-print(length([1, 2, 3, 6]))  # 3
+# def reverse_range(begin, end):
+#     if begin <= end:
+#         result = reverse_range(begin + 1, end)
+#         result.append(begin)
+#         return result
+#     return []
+#
+#
+# # print(list(range(end, begin-1, -1)))
+#
+#
+# # reverse_range(1, 1)  # [1]
+# print(reverse_range(1, 3))  # [3, 2, 1]
 
-
-def reverse_range(begin, end):
-    item = []
-    if begin <= end:
-        for x in range(end, begin - 1, -1):
-            item.append(x)
-        return item
-    return reverse_range(begin, end)
-
-    # print(list(range(end, begin-1, -1)))
-
-
-# reverse_range(1, 1)  # [1]
-print(reverse_range(1, 5))  # [3, 2, 1]
-
-
-def filter_positive(item):
-    if item == []:
+def filter_positive(items):
+    *head, tail = items
+    if not head:
         return []
-    for x, i in enumerate(item):
-
-        if i < 0:
-            item.pop(x)
-            return item
-
-    return filter_positive(item)
+    result = filter_positive(head)
+    # print()
+    if head[0] > 0:
+        result.append(head[0])
+    return result
 
 
-print(filter_positive([]))  # []
+# print(filter_positive([]))  # []
 print(filter_positive([-3]))  # []
 print(filter_positive([1, -2, 3]))  # [1, 3]
+
+# """Вывести список с помощью рекурсии (поэлементно) на экран, не используя
+# for, и вернуть количество элементов в списке"""
+#
+#
+def element_show(item):
+    if not item:
+        return 0
+    else:
+        print(item[0])
+        return 1 + element_show(item[1:])
+#
+#
+print(element_show([1, 3, 4, 5, 6]))
+# # 1
+# # 3
+# # 4
+# # 5
+# # 6
+#
+#
+# def element_count(item):
+#     if not item:
+#         return 0
+#     return 1 + element_count(item[1:])
+# #
+# #
+# print(element_count([1, 3, 4, 5, 6, 8, 5]))  # 7
+
 
 # def sum(n):
 #     if n == 1:
