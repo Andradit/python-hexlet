@@ -62,9 +62,11 @@ def compress_images(file):
             if 'size' in descendant['meta']:
                 descendant['meta']['size'] //= 2
 
-    new_file = mkdir(get_name(file), new_children, copy.deepcopy(get_meta(file)))
+    new_file = mkdir(get_name(file), new_children,
+                     copy.deepcopy(get_meta(file)))
 
     return new_file
+
 
 # old_file = get_children(tree)[0]
 # print(old_file)

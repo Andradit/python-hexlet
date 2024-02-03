@@ -49,7 +49,16 @@ def downcase_file_names(node):
 #     new_tree = mkdir(name, upd_name, new_meta)
 #     return new_tree
 
+'SOLUTION'
 
+# def downcase_file_names(node):
+#     new_meta = copy.deepcopy(get_meta(node))
+#     name = get_name(node)
+#     if is_file(node):
+#         return mkfile(name.lower(), new_meta)
+#     children = get_children(node)
+#     new_children = map(downcase_file_names, children)
+#     return mkdir(name, list(new_children), new_meta)
 
 print(downcase_file_names(tree))
 new_tree = downcase_file_names(tree)

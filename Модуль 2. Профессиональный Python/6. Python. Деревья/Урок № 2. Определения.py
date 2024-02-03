@@ -24,7 +24,8 @@ from typing import List
 """Подсказки
 Подключенный в модуле пакет itertools можно использовать, 
 но это необязательно"""
-from itertools import chain
+
+import itertools
 
 
 def remove_first_level(tree):
@@ -36,6 +37,11 @@ def remove_first_level(tree):
                 # a = list(chain(x))
     return res
 
+
+'SOLUTION'
+# def remove_first_level(tree):
+#     children = filter(lambda item: isinstance(item, list), tree)
+#     return list(itertools.chain(*children))
 
 tree1 = [[5], 1, [3, 4]]
 print(remove_first_level(tree1))  # [5, 3, 4]
