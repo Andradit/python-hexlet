@@ -23,9 +23,8 @@ def number_of_unique_letters(text):
 
 'ALTERNATIVE'
 # def number_of_unique_letters(text):
-#     text = text.lower()
 #     counter = 0
-#     for symbol in set(text):
+#     for symbol in set(text.lower()):
 #         if symbol.isalpha():
 #             counter += 1
 #     return counter

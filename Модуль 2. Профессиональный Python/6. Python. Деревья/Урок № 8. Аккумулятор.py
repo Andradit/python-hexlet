@@ -30,7 +30,6 @@ tree = mkdir('/', [
 примеру из теории;
 - переменную с путем от корня до текущего узла можно назвать ancestry;
 - для построения путей используйте функцию os.path.join()"""
-from functools import reduce
 
 
 # def strings(node, sub_string):
@@ -55,7 +54,7 @@ def find_files_by_name(tree, sub_string):
 
         depth = os.path.join(depth, name)
         ancestry = list(map(lambda child: walk(child, depth), children))
-        
+
         return flatten(ancestry)
 
     return walk(tree, '')
@@ -64,20 +63,20 @@ def find_files_by_name(tree, sub_string):
 'SOLUTION'
 
 
-def find_files_by_name(tree, substr):
-    def walk(node, ancestry):
-        name = get_name(node)
-        new_ancestry = os.path.join(ancestry, name)
-
-        if is_file(node):
-            return [] if name.find(substr) < 0 else new_ancestry
-
-        children = get_children(node)
-        paths = map(lambda child: walk(child, new_ancestry), children)
-
-        return flatten(paths)
-
-    return walk(tree, '')
+# def find_files_by_name(tree, substr):
+#     def walk(node, ancestry):
+#         name = get_name(node)
+#         new_ancestry = os.path.join(ancestry, name)
+#
+#         if is_file(node):
+#             return [] if name.find(substr) < 0 else new_ancestry
+#
+#         children = get_children(node)
+#         paths = map(lambda child: walk(child, new_ancestry), children)
+#
+#         return flatten(paths)
+#
+#     return walk(tree, '')
 
 
 print(find_files_by_name(tree, 'co'))

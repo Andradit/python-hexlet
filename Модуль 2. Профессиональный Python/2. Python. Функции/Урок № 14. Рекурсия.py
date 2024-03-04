@@ -35,27 +35,29 @@
 но попробуйте сменить угол зрения."""
 
 
-# def length(items):
-#     print(f'{items=}')
-#     head, *tail = items
-#     print(f'{head=}, {tail=}')
-#     if not tail:
-#         print(1)
-#         return 1
-#     result = length(tail) + 1
-#     print(result)
-#     return result
+def length(items):
+    # print(f'{items=}')
+    if not items:
+        return 0
+    head, *tail = items
+    # print(f'{head=}, {tail=}')
+    if not tail:
+        # print(1)
+        return 1
+    result = length(tail) + 1
+    # print(result)
+    return result
 #
 #
 # print(length([1, 2, 3, 6, 8]))  # 5
 
 
-# def reverse_range(begin, end):
-#     if begin <= end:
-#         result = reverse_range(begin + 1, end)
-#         result.append(begin)
-#         return result
-#     return []
+def reverse_range(begin, end):
+    if begin <= end:
+        result = reverse_range(begin + 1, end)
+        result.append(begin)
+        return result
+    return []
 #
 #
 # # print(list(range(end, begin-1, -1)))
@@ -65,33 +67,57 @@
 # print(reverse_range(1, 3))  # [3, 2, 1]
 
 def filter_positive(items):
-    *head, tail = items
-    if not head:
+    if not items:
         return []
-    result = filter_positive(head)
-    # print()
-    if head[0] > 0:
-        result.append(head[0])
-    return result
+    head, *tail = items
 
+    if head > 0:
+        return [head] + filter_positive(tail)
+    return filter_positive(tail)
 
+    # res = []
+    # # print(head)
+    # # print(tail)
+    # if not head:
+    #     return []
+    # if head > 0:
+    #     res.append(head)
+    # if tail:
+    #     res += filter_positive(tail)
+    # return res
+
+"""
+if head > 0:
+    return [head] + filter_positive(tail)
+return filter_positive(tail)
+"""
+
+#
 # print(filter_positive([]))  # []
-print(filter_positive([-3]))  # []
-print(filter_positive([1, -2, 3]))  # [1, 3]
+# print(filter_positive([-3]))  # []
+print(filter_positive([1, -2, 3, 5, -6, -8, 7]))  # [1, 3, 5, 7]
 
+# def fact(n):
+#     if n <= 0:
+#         return 1
+#     else:
+#         return n * fact(n-1)
+#
+# res = fact(3)
+# print(res)
 # """Вывести список с помощью рекурсии (поэлементно) на экран, не используя
 # for, и вернуть количество элементов в списке"""
 #
 #
-def element_show(item):
-    if not item:
-        return 0
-    else:
-        print(item[0])
-        return 1 + element_show(item[1:])
-#
-#
-print(element_show([1, 3, 4, 5, 6]))
+# def element_show(item):
+#     if not item:
+#         return 0
+#     else:
+#         # print(item[0])
+#         return 1 + element_show(item[1:])
+# #
+# #
+# print(element_show([1, 3, 4, 5, 6]))
 # # 1
 # # 3
 # # 4

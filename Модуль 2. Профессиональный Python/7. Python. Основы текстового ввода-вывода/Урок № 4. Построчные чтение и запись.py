@@ -19,7 +19,14 @@ capital_letters - список букв, которые нужно привес�
 # transform('python.txt', 'out.txt', rules=rules)
 # print(open('out.txt').read())
 
-# string = ('Beautiful better\nExplicit better implicit\nSimple better complex\nComplex better complicated\nReadability counts\n'"Special cases aren't Special enough break rules\n"'Although Practicality beats Purity\n''Errors Should never Silently\n''Unless explicitly Silenced\n''ambiguity refuse temptation guess\n''There Should Preferably obvious\n'"Although obvious first unless you're Dutch\n"'better never\n''Although never often better right\n'"Namespaces honking great let's those\n")
+# string = ('Beautiful better\nExplicit better implicit\nSimple better
+# complex\nComplex better complicated\nReadability counts\n'"Special cases
+# aren't Special enough break rules\n"'Although Practicality beats
+# Purity\n''Errors Should never Silently\n''Unless explicitly
+# Silenced\n''ambiguity refuse temptation guess\n''There Should Preferably
+# obvious\n'"Although obvious first unless you're Dutch\n"'better
+# never\n''Although never often better right\n'"Namespaces honking great
+# let's those\n")
 
 '''Если в результате преобразования получилась пустая строка, то ее не нужно 
 записывать в выходной файл.
@@ -38,9 +45,14 @@ input_file = open("input.txt", "r")
 output_file = open("output.txt", "w")
 
 
-# input_file.write('Beautiful better\nExplicit better implicit\nSimple better complex\nComplex better complicated\nReadability counts\n'"Special cases aren't Special enough break rules\n"'Although Practicality beats Purity\n''Errors Should never Silently\n''Unless explicitly Silenced\n''ambiguity refuse temptation guess\n''There Should Preferably obvious\n'"Although obvious first unless you're Dutch\n"'better never\n''Although never often better right\n'"Namespaces honking great let's those\n")
-# input_file.close()
-# output_file.close()
+# input_file.write('Beautiful better\nExplicit better implicit\nSimple better
+# complex\nComplex better complicated\nReadability counts\n'"Special cases
+# aren't Special enough break rules\n"'Although Practicality beats
+# Purity\n''Errors Should never Silently\n''Unless explicitly
+# Silenced\n''ambiguity refuse temptation guess\n''There Should Preferably
+# obvious\n'"Although obvious first unless you're Dutch\n"'better
+# never\n''Although never often better right\n'"Namespaces honking great
+# let's those\n") input_file.close() output_file.close()
 
 
 # string = ("The Python language was not named after a long snake but after "
@@ -67,8 +79,10 @@ def word_min_len(length, text):
 def censored_words(del_words, text):
     result = []
     for line in text:
-        for word in del_words:
-            line = line.replace(word + ' ', '')
+        new_line = ''
+        for word in line.split():
+            if word not in del_words:
+                new_line += word + ' '
         result.append(line.strip())
     return result
 
@@ -124,7 +138,7 @@ def transform(in_file, out_file, rules):
 
     out = open(out_file, "w")
     print('\n'.join(result).strip('\n'))
-    out.write('\n'.join(result).strip('\n'))
+    out.write('\n'.join(result) + '\n')
 
     return '\n'.join(result).strip('\n')
 
