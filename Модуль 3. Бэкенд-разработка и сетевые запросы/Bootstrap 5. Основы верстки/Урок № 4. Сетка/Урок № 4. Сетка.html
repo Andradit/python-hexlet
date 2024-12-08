@@ -1,0 +1,156 @@
+Создайте сетку для товаров интернет-магазина. Магазин занимается печатью репродукции фотографий на холсте. Ваша задача:
+сверстать три строки с карточками используя классы, которые были изучены в этом уроке. В качестве карточек товара
+используется следующая разметка:
+
+<article class="card">
+  <img src="./images/1.jpg" class="card-img-top" alt="Фотография"/>
+  <div class="card-body">
+    <h2 class="card-title h4">Фотография</h2>
+    <p class="card-text">
+      Описание фотографии и имя фотографа. Возможности заказа репродукции
+      фотографии на холсте
+    </p>
+    <a href="#" class="btn btn-primary">Немедленно купить</a>
+  </div>
+</article>
+
+Для каждой новой карточки используйте новую картинку. Они пронумерованы от 1 до 7 и находятся в директории images.
+Добавляйте изображения последовательно. Первая карточка имеет картинку с именем 1.jpg. Последняя карточка содержит
+картинку с именем 7.jpg.
+
+Задание
+
+  1. Создайте контейнер.
+  2. Добавьте заголовок h1 с названием Фотографии нашего мира
+  3. Создайте три строки и распределите колонки. Bootstrap — 12 колоночная система. Исходя из этого укажите правильные
+  классы для колонок.
+  4. К каждой строке добавьте класс mb-3. Это создаст отступ снизу от строки.
+  5. Используя разметку карточек добавьте их во все колонки. Не забудьте изменить изображение.
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <title>Интернет-магазин «Фотографии на холсте»</title>
+</head>
+
+<body class="bg-light p-5">
+<!-- BEGIN (write your solution here) -->
+<div class="container">
+  <h1>Фотографии нашего мира</h1>
+  <div class="row mb-3">
+    <div class="col-3">
+      <article class="card">
+        <img src="./images/1.jpg" class="card-img-top" alt="Фотография"/>
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">
+            Описание фотографии и имя фотографа. Возможности заказа репродукции
+            фотографии на холсте
+          </p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col-3">
+      <article class="card">
+        <img src="./images/2.jpg" class="card-img-top" alt="Фотография"/>
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">
+            Описание фотографии и имя фотографа. Возможности заказа репродукции
+            фотографии на холсте
+          </p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col-3">
+      <article class="card">
+        <img src="./images/3.jpg" class="card-img-top" alt="Фотография"/>
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">
+            Описание фотографии и имя фотографа. Возможности заказа репродукции
+            фотографии на холсте
+          </p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col-3">
+      <article class="card">
+        <img src="./images/4.jpg" class="card-img-top" alt="Фотография"/>
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">
+            Описание фотографии и имя фотографа. Возможности заказа репродукции
+            фотографии на холсте
+          </p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <article class="card">
+        <img src="./images/5.jpg" class="card-img-top" alt="Фотография"/>
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">
+            Описание фотографии и имя фотографа. Возможности заказа репродукции
+            фотографии на холсте
+          </p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-6">
+      <article class="card">
+        <img src="./images/6.jpg" class="card-img-top" alt="Фотография"/>
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">
+            Описание фотографии и имя фотографа. Возможности заказа репродукции
+            фотографии на холсте
+          </p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col-6">
+      <article class="card">
+        <img src="./images/7.jpg" class="card-img-top" alt="Фотография"/>
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">
+            Описание фотографии и имя фотографа. Возможности заказа репродукции
+            фотографии на холсте
+          </p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+</div>
+<!-- END -->
+</body>
+
+</html>
+
+SOLUTION
+
+<!--IDENTICAL!!!-->

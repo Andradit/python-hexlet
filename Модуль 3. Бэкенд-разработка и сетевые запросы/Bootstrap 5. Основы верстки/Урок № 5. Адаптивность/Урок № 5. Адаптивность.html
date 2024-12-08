@@ -1,0 +1,145 @@
+Адаптируйте новую сетку магазина по продаже репродукций фотографий на холсте. В отличие от прошлого шаблона, в этом
+изменилась последняя строка. Обратите на это внимание. Используя необходимые классы создайте сетку.
+
+Карточка товара имеет следующую структуру:
+
+<article class="card">
+  <img src="./images/1.jpg" class="card-img-top" alt="Фотография">
+  <div class="card-body">
+    <h2 class="card-title h4">Фотография</h2>
+    <p class="card-text">Описание фотографии и имя фотографа. Возможности заказа репродукции фотографии на холсте</p>
+    <a href="#" class="btn btn-primary">Немедленно купить</a>
+  </div>
+</article>
+
+Для каждой новой карточки используйте новое изображение. Они пронумерованы от 1 до 7 и находятся в директории images.
+Добавляйте изображения последовательно. Первая карточка имеет картинку с именем 1.jpg. Последняя карточка содержит
+картинку с именем 7.jpg.
+
+Задание
+
+  1. Создайте контейнер
+  2. Добавьте заголовок h1 с названием Фотографии нашего мира
+  3. Создайте три строки и распределите колонки. Bootstrap — 12 колоночная система. Исходя из этого укажите правильные классы для колонок
+  4. К каждой колонке добавьте класс mb-3. Это создаст отступ снизу при адаптивности
+  5. Используя разметку карточек добавьте их во все колонки. Не забудьте изменить изображение
+  6. Адаптивность:
+    - на разрешениях до 576px по ширине: каждая колонка занимает всё доступное пространство
+    - на разрешениях от 576px до 992px по ширине: карточки первой строки располагаются в две строки
+    - на разрешениях от 992px по ширине в первой строке 4 карточки в ряд
+
+Подсказки
+
+Последняя строка разбивается на две колонки: первая занимает 4 ячейки, вторая 8 ячеек
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <title>Интернет-магазин «Фотографии на холсте»</title>
+</head>
+
+<body class="bg-light p-5">
+<!-- BEGIN (write your solution here) -->
+<div class="container">
+  <h1>Фотографии нашего мира</h1>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+
+    <div class="col mb-3">
+      <article class="card">
+        <img src="./images/1.jpg" class="card-img-top" alt="Фотография">
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">Описание фотографии и имя фотографа. Возможности заказа репродукции фотографии на
+            холсте</p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col mb-3">
+      <article class="card">
+        <img src="./images/2.jpg" class="card-img-top" alt="Фотография">
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">Описание фотографии и имя фотографа. Возможности заказа репродукции фотографии на
+            холсте</p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col mb-3">
+      <article class="card">
+        <img src="./images/3.jpg" class="card-img-top" alt="Фотография">
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">Описание фотографии и имя фотографа. Возможности заказа репродукции фотографии на
+            холсте</p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col mb-3">
+      <article class="card">
+        <img src="./images/4.jpg" class="card-img-top" alt="Фотография">
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">Описание фотографии и имя фотографа. Возможности заказа репродукции фотографии на
+            холсте</p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col mb-3">
+      <article class="card">
+        <img src="./images/5.jpg" class="card-img-top" alt="Фотография">
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">Описание фотографии и имя фотографа. Возможности заказа репродукции фотографии на
+            холсте</p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col col-md-4 mb-3">
+      <article class="card">
+        <img src="./images/6.jpg" class="card-img-top" alt="Фотография">
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">Описание фотографии и имя фотографа. Возможности заказа репродукции фотографии на
+            холсте</p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col col-md-8 mb-3">
+      <article class="card">
+        <img src="./images/7.jpg" class="card-img-top" alt="Фотография">
+        <div class="card-body">
+          <h2 class="card-title h4">Фотография</h2>
+          <p class="card-text">Описание фотографии и имя фотографа. Возможности заказа репродукции фотографии на
+            холсте</p>
+          <a href="#" class="btn btn-primary">Немедленно купить</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+<!-- END -->
+</body>
+
+</html>

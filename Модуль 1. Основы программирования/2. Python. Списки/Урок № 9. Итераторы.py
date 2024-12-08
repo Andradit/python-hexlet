@@ -12,7 +12,7 @@
 
 
 def find_first_index(value, items):
-    for (index, item) in enumerate(items):
+    for index, item in enumerate(items):
         # print(f"{index=},{item=},{value=}")
         if value == item:
             return index
@@ -53,8 +53,8 @@ def find_second_index(value, items):
 
 print(find_second_index('b', 'bob'))  # 2
 
-print(find_second_index('a', 'cat')) is None  # True
+print(find_second_index('a', 'cat') is None)  # True
 
-print(find_second_index('a', '')) is None  # True
+print(find_second_index('a', '') is None)  # True
 
-print(find_second_index('l', 'Hello'))
+print(find_second_index('l', 'Hello'))  # 3
