@@ -41,8 +41,6 @@ class Counter:
         return Counter(self.value + delta)
 
     def dec(self, delta=1):
-        if self.value < 0:
-            self.value = 0
         return Counter(self.value - delta)
 
 
