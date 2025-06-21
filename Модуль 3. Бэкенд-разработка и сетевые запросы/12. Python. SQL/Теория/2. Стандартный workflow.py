@@ -3,11 +3,13 @@ import psycopg2
 # Создаем соединение с базой
 # hexlet_test - Имя базы данных
 try:
-    conn = psycopg2.connect('postgresql://postgres:123456789@localhost/hexlet')
+    conn = psycopg2.connect(
+        'postgresql://postgres:123456789@localhost:5432/hexlet')
 except:
     print('Can`t establish connection to database')
 
-sql = "CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(255), phone VARCHAR(255));"
+sql = ("CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(255),"
+       "phone VARCHAR(255));")
 # Запрос выполняется через создание объекта курсора
 cursor = conn.cursor()
 cursor.execute(sql)

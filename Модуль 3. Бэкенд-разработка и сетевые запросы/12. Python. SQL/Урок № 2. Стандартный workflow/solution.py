@@ -35,7 +35,20 @@ movies. Каждый фильм — это новая строка формат�
 
 import psycopg2
 
-conn = psycopg2.connect('postgresql://tirion:secret@localhost:5432/tirion')
+conn = psycopg2.connect('postgresql://postgres:123456789@localhost:5432/hexlet')
+cursor = conn.cursor()
+
+with open('init.sql', 'r') as file:
+    query = file.read()
+    cursor.execute(query)
+    conn.commit()
+
+sql = """INSERT INTO movies (title, release_year, duration)
+        VALUES ('The Dark Knight', '2008', '152'),
+        ('12 Angry Men', '1957', '96'),
+        ('Pulp Fiction', '1994', '154');"""
+cursor.execute(sql)
+conn.commit()
 
 
 def add_movies(conn):
@@ -54,20 +67,24 @@ def get_all_movies(conn):
     return list(cursor)
 
 
+print(get_all_movies(conn))
+print(add_movies(conn))
+print(get_all_movies(conn))
+conn.close()
+
 'ALTERNATIVE SOLUTION'
 
-
-def add_movies(conn):
-    films = [
-        ('Godfather', '1972', '175'),
-        ('The Green Mile', '1999', '189')
-    ]
-    film_records = ", ".join(["%s"] * len(films))
-    insert_query = (f"INSERT INTO movies (title, release_year, duration)"
-                    f"VALUES {film_records};")
-    cursor = conn.cursor()
-    cursor.execute(insert_query, films)
-    conn.commit()
+# def add_movies(conn):
+#     films = [
+#         ('Godfather', '1972', '175'),
+#         ('The Green Mile', '1999', '189')
+#     ]
+#     film_records = ", ".join(["%s"] * len(films))
+#     insert_query = (f"INSERT INTO movies (title, release_year, duration)"
+#                     f"VALUES {film_records};")
+#     cursor = conn.cursor()
+#     cursor.execute(insert_query, films)
+#     conn.commit()
 
 
 #

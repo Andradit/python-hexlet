@@ -31,8 +31,8 @@ class HourClock:
         return self.position
 
     @hours.setter
-    def hours(self, new_pos):
-        self.position = new_pos % 12
+    def hours(self, new_position):
+        self.position = new_position % 12
 
 
 clock = HourClock()

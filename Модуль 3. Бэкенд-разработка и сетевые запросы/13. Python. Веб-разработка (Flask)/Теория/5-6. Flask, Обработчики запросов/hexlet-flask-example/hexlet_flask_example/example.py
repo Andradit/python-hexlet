@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask import request
 
 # Это callable WSGI-приложение
 app = Flask(__name__)
@@ -32,3 +33,22 @@ def courses_show(id):
 def users_id(id):
     return render_template('users/show.html', num=id)
 
+
+users = [
+    {'id': 1, 'name': 'mike'},
+    {'id': 2, 'name': 'mishel'},
+    {'id': 3, 'name': 'adel'},
+    {'id': 4, 'name': 'keks'},
+    {'id': 5, 'name': 'kamila'}
+]
+
+
+@app.route('/users')
+def get_users():
+    term = request.args.get('term')
+    filtered_users = [user for user in users if term in user]
+    return render_template(
+        'users/index.html',
+        users=filtered_users,
+        search=term
+    )

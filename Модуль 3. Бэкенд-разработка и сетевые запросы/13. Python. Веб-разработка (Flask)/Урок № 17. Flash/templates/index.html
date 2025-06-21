@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <form action="/courses" method="post">
+    <input type="submit" value="Create Course">
+  </form>
+
+  <!-- BEGIN (write your solution here) -->
+  {% if get_flashed_messages(True) %}
+  {% for category, message in get_flashed_messages(True) %}
+  <div class="flash {{ category }}">{{ message }}</div>
+  {% endfor %}
+  {% endif %}
+  <!-- END -->
+</body>
+</html>
+
+<!--SOLUTION-->
+
+<!--{% if messages %}-->
+<!--<ul>-->
+<!--  {% for category, msg in messages %}-->
+<!--<li>{{ msg }} : {{ category }}!</li>-->
+<!--  {% endfor %}-->
+<!--</ul>-->
+<!--{% endif %}-->
