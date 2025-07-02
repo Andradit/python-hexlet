@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Example application</title>
+</head>
+<body>
+  <a href="{{ url_for('products') }}">Products</a>
+  <!-- BEGIN (write your solution here) -->
+  <form action="{{ url_for('add_product') }}" method="post">
+
+    {% include "products/form.html" %}
+
+    <input type="submit" value="Create">
+    <!-- END -->
+</body>
+</html>
+
+<!--SOLUTION-->
+
+<!-- BEGIN -->
+<!--<form action="{{ url_for('create_product') }}" method="post">-->
+<!--  {% include "products/form.html" %}-->
+<!--  <input type="submit" value="Create">-->
+<!--</form>-->
+<!-- END -->

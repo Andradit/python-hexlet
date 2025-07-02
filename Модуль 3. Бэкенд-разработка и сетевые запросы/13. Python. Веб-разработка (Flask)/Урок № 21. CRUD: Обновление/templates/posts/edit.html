@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Example application</title>
+</head>
+<body>
+  <a href="{{ url_for('posts_get') }}">Посты</a>
+  <!-- BEGIN (write your solution here) -->
+  <form action="{{ url_for('post_update', id=post.id) }}" method="post">
+
+    {% include "posts/form.html" %}
+
+    <input type="submit" value="Update">
+  </form>
+  <!-- END -->
+</body>
+</html>
+
+
+<!--SOLUTION-->
+
+<!--IDENTICAL!!!-->

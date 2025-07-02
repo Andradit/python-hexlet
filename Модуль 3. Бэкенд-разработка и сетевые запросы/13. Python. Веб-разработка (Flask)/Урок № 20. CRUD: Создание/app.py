@@ -42,7 +42,7 @@ from repository import PostsRepository
 from validator import validate
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SECRET_KEY'] = 'aasdasddvafdsf'
 
 
 @app.route('/')

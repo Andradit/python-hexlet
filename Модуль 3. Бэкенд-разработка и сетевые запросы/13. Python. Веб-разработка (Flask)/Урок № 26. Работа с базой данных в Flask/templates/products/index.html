@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Example application</title>
+</head>
+<body>
+  <a href="{{ url_for('new_product') }}">Add product</a>
+  <!-- BEGIN (write your solution here) -->
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <td><a href="{{ url_for('get_product', id=product.id) }}">{{ product.title }}</td>
+        <td>{{ product.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <!-- END -->
+</body>
+</html>
+
+<!--SOLUTION-->
+
+<!--IDENTICAL!!!-->
