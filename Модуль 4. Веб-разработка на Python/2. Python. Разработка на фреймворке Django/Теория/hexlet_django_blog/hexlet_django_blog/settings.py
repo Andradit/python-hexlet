@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ov4kv-*+5mu=ikurrqr3)zcw)qbt=qdymfhc6_t=-84mi$arid'
+SECRET_KEY = 'django-insecure-2oc+q5j&l+m2gbeqqz=+m73wc^q+o781gq#jreo#bxrax%i^x1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hexlet_django_blog',  # <- добавляем эту строчку
+    'hexlet_django_blog.article',  # <- добавляем эту строчку
 ]
 
 MIDDLEWARE = [
@@ -53,7 +54,7 @@ ROOT_URLCONF = 'hexlet_django_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],  # <- добавляем эту строчку
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
