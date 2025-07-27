@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+<!-- BEGIN (write your solution here) -->
+{% for a in articles %}
+<h1>{{ a.title }}</h1>
+<p>{{ a.author }}</p>
+{% endfor %}
+<!-- END -->
+{% endblock %}
+
+<!--SOLUTION-->
+
+<!--<h1>Статьи</h1>-->
+<!--<ul>-->
+<!--  {% for article in articles %}-->
+<!--  <li>{{ article.title }} by {{ article.author }}</li>-->
+<!--  {% endfor %}-->
+<!--</ul>-->
