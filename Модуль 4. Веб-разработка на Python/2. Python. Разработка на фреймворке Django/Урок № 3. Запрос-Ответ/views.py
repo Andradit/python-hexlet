@@ -4,7 +4,7 @@
     - реализуйте вью, которая отвечает за формирование страницы /about. Вью
     должна использовать шаблон about.html
     - реализуйте вью, которая отвечает за формирование страницы /articles. Вью
-    должна использовать шаблон articles.html
+    должна использовать шаблон layout.html
 
 simple_blog/urls.py
 Добавьте два маршрута:
@@ -21,7 +21,7 @@ simple_blog/templates/about.html
     <h1>О блоге</h1>
     <p>Эксперименты с Django на Хекслете</p>
 
-simple_blog/templates/articles.html
+simple_blog/templates/layout.html
 Добавьте в шаблон HTML:
 
     <h1>Статьи</h1>
@@ -43,7 +43,7 @@ def about(request):
 
 
 def articles(request):
-    return render(request, 'articles.html')
+    return render(request, 'layout.html')
 
 
 # END

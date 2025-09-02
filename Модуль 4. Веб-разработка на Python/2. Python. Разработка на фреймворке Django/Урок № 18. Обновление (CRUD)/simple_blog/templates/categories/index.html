@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load bootstrap4 i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+<div class="container mt-4">
+  <small><a href="{% url 'categories_create' %}">Создать категорию</a></small>
+  <h1>Список категорий статей</h1>
+  {% for category in categories %}
+  <h2><a class="link" href="{% url 'categories_detail' category.id %}">
+    {{ category.name }}</a>
+  </h2>
+  <div>{{ category.description }}</div>
+  <a href="{% url 'categories_update' category.id %}">Редактировать</a>
+  <!-- BEGIN (write your solution here) -->
+  <form action="{% url 'categories_delete' category.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Удалить">
+  </form>
+  <!-- END -->
+  {% endfor %}
+</div>
+{% endblock content %}
+
+
+<!--SOLUTION-->
+
+<!-- BEGIN -->
+<!--<form action="{% url 'categories_delete' category.id %}" method="post">-->
+<!--  {% csrf_token %}-->
+<!--  <input class="btn btn-danger" type="submit" value="Удалить">-->
+<!--</form>-->
+<!-- END -->

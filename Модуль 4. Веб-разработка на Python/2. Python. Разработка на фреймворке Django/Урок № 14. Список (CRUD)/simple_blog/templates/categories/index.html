@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+{% block content %}
+<!-- BEGIN (write your solution here) -->
+<h1>Категории</h1>
+<ul>
+  {% for category in categories %}
+  <li>
+    <h2>{{ category.name }}</h2>
+    <div>{{ category.description|slice:":200" }}</div>
+  </li>
+  {% endfor %}
+</ul>
+<!-- END -->
+{% endblock %}
+
+
+<!--SOLUTION-->
+<!--&lt;!&ndash; BEGIN &ndash;&gt;-->
+<!--  <h1>Список категорий статей</h1>-->
+<!--      {% for category in categories %}-->
+<!--      <p>{{ category.name }} : {{ category.description }}</p>-->
+<!--      {% endfor %}-->
+<!--&lt;!&ndash; END &ndash;&gt;-->

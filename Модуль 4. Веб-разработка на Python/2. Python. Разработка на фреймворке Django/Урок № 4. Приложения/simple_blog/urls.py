@@ -26,11 +26,11 @@ simple_blog/templates/about.html
     <h1>О блоге</h1>
     <p>Эксперименты с Django на Хекслете</p>
 
-simple_blog/templates/articles.html
+simple_blog/templates/layout.html
 Добавьте в шаблон HTML:
     <h1>Статьи</h1>
 
-simple_blog/templates/categories.html
+simple_blog/templates/layout.html
 Добавьте в шаблон HTML:
     <h1>Категории статей</h1>
 

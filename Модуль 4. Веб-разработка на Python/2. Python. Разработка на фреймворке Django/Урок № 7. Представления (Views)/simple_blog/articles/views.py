@@ -6,7 +6,7 @@
 
     - выводить список всех статей из переменной articles по методу GET. Для
     этого передавайте переменную в контексте по ключу 'articles' и используйте
-    шаблон articles.html
+    шаблон layout.html
     - добавлять статью в список по методу POST. Для этого получайте значения по
     ключам title и author из request.POST. После этого выводите список всех
     статей
@@ -45,7 +45,7 @@ articles = [
 def index(request):
     if request.method == "GET":
         return render(
-            request, "articles.html", context={'articles': articles}
+            request, "layout.html", context={'articles': articles}
         )
     elif request.method == "POST":
         article = {
@@ -54,7 +54,7 @@ def index(request):
         }
         articles.append(article)
         return render(
-            request, "articles.html", context={'articles': articles}
+            request, "layout.html", context={'articles': articles}
         )
 # END
 
@@ -70,5 +70,5 @@ def index(request):
 #             'author': request.POST['author']
 #         }
 #         articles.append(article)
-#     return render(request, 'articles.html', context={'articles': articles})
+#     return render(request, 'layout.html', context={'articles': articles})
 # END

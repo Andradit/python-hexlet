@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+<h2>by {{ article.body }}</h2>
+{% endblock %}

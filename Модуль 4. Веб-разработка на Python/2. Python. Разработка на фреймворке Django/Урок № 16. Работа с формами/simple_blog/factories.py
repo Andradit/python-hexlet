@@ -1,0 +1,25 @@
+import factory
+import factory.random
+from simple_blog.articles.models import Article
+from simple_blog.categories.models import Category
+
+SEED = 4321
+
+factory.random.reseed_random(SEED)
+
+
+class CategoryFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Category
+
+    name = factory.Faker('word')
+    description = factory.Faker('sentence', nb_words=4)
+
+
+class ArticleFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Article
+
+    title = factory.Faker('sentence', nb_words=5)
+    body = factory.Faker('paragraph', nb_sentences=5, variable_nb_sentences=False)
+    category = factory.SubFactory(CategoryFactory)

@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include  # <- добавлен include
+from django.views.generic import TemplateView
+
 from hexlet_django_blog import views
+from hexlet_django_blog.views import HomePageView
 
 urlpatterns = [
-    path("", views.index),  # <- добавляем эту строчку
+    path('', HomePageView.as_view()),  # <- добавляем эту строчку
     path("articles/", include("hexlet_django_blog.article.urls")),
     # новая строчка
     path("about/", views.about),  # <- добавляем эту строчку

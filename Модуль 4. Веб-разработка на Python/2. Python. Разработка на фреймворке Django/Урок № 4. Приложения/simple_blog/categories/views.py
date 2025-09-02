@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'categories.html')
+    return render(request, 'layout.html')

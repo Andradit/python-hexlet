@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+<h1>Статьи</h1>
+<ul>
+  {% for article in articles %}
+  <li>{{ article.title }} by {{ article.author }} (<a href="{% url 'articles:article' article.id %}">link</a>)</li>
+  {% endfor %}
+</ul>
+{% endblock %}
